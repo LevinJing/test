@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: MyString
+  time_limit: 1
+  yesterday_tips: MyText
+  today_tips: MyText
+  trouble_tips: MyText
+  bearychat_id: MyString
+
+two:
+  start_time: MyString
+  time_limit: 1
+  yesterday_tips: MyText
+  today_tips: MyText
+  trouble_tips: MyText
+  bearychat_id: MyString

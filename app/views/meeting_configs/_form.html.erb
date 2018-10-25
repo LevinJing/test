@@ -1,0 +1,41 @@
+  <%= form_for @config do |f| %>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">站会开始时间</label>
+      <%= f.text_field :start_time, class: 'form-control', type: :time %>
+    </div>
+
+
+    <div class="form-group">
+      <label for="formGroupExampleInput2">会议结束时长(数字/分钟）</label>
+      <%= f.text_field :time_limit, class: 'form-control', type: :number %>
+    </div>
+
+
+    <div class="form-group">
+      <label for="formGroupExampleInput2">昨日工作内容模版</label>
+      <%= f.text_area :yesterday_tips, class: 'form-control', placeholder: '- 昨天我为开发团队达成Sprint 目标做了什么？' %>
+    </div>
+
+
+    <div class="form-group">
+      <label for="formGroupExampleInput2">今日工作计划模版</label>
+      <%= f.text_area :today_tips, class: 'form-control', placeholder: '- 今天我为开发团队达成Sprint 目标做了什么？' %>
+    </div>
+
+
+    <div class="form-group">
+      <label for="formGroupExampleInput2">障碍内容模版</label>
+      <%= f.text_area :trouble_tips, class: 'form-control', placeholder: '- 有什么事情阻碍了我帮助团队达成Sprint 目标？' %>
+      <label>记录并显示 <%= f.check_box :show_trouble %></label>
+    </div>
+
+
+    <div class="form-group">
+      <label for="formGroupExampleInput2">风险模版</label>
+      <%= f.text_area :risk_tips, class: 'form-control', placeholder: '- 还有哪些风险？' %>
+      <label>记录并显示 <%= f.check_box :show_risk %></label>
+    </div>
+
+    <%= f.hidden_field :bearychat_id %>
+    <button class='btn btn-primary'>保存</button>
+  <% end %>
