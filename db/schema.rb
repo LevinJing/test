@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_074735) do
+ActiveRecord::Schema.define(version: 2018_11_04_133714) do
 
   create_table "meeting_configs", force: :cascade do |t|
     t.string "start_time"
@@ -24,6 +24,20 @@ ActiveRecord::Schema.define(version: 2018_10_25_074735) do
     t.text "risk_tips"
     t.boolean "show_risk"
     t.boolean "show_trouble"
+    t.integer "end_time_number"
+    t.integer "start_time_number"
+  end
+
+  create_table "meeting_messages", force: :cascade do |t|
+    t.integer "meeting_config_id"
+    t.string "uid"
+    t.text "yesterday_tips"
+    t.text "today_tips"
+    t.text "trouble_tips"
+    t.text "risk_tips"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "channel_id"
   end
 
 end

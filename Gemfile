@@ -17,7 +17,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
-gem 'faye-websocket'
+gem 'websocket-client-simple'
+
+gem 'whenever'
 
 gem 'rest-client'
 # Reduces boot times through caching; required in config/boot.rb

@@ -1,13 +1,13 @@
   <%= form_for @config do |f| %>
     <div class="form-group">
-      <label for="formGroupExampleInput2">站会开始时间</label>
-      <%= f.text_field :start_time, class: 'form-control', type: :time %>
+      <label for="formGroupExampleInput2">站会开始时间（小时/分钟） </label>
+      <%= f.text_field :start_time, class: 'form-control', type: :time, step: 600, min: "00:10", max: "24:00" %>
     </div>
 
 
     <div class="form-group">
       <label for="formGroupExampleInput2">会议结束时长(数字/分钟）</label>
-      <%= f.text_field :time_limit, class: 'form-control', type: :number %>
+      <%= f.text_field :time_limit, class: 'form-control', type: :number, step: 10 %>
     </div>
 
 
