@@ -1,26 +1,27 @@
-# 站会机器人
+### 站会小助手 —— ——解救你拖沓的站会
 
-# README
+#### 痛点描述：
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- 站会为什么是个同步，要挨个说完才轮到我，不能变成异步的嘛
+- 临时有事，站会没参加上，大家都说了啥....
+- 作为职场小白，站会我要说点what？
+- 小明怎么这么健谈...好像已经说太多了吧...耽误时间
+- 他们两聊得这个点和我无关，我还得站着听...
 
-Things you may want to cover:
+#### 创意描述
+- 敏捷开发中站会是重要的一环，鼓励团队每日同步更新。站着的目的就是团队成员尽快地描述自己的工作和遇到的问题。
+- 在大部分团队没有Scrum Master的情况下，我们期望机器人能替代其作用，高效地达到站会的目的。
+- 设置每日站会的``开始时间``、``持续时长``后，站会机器人会收集站会中提出的**风险**、**障碍**，内容@全员查看，提醒解决。
+- 其他成员的工作内容，可在讨论组中直接查看。
 
-- Ruby version
 
-- System dependencies
+#### 疑问解答
+- 1.站会中反映出来的问题怎么解决？
+ - 我们的建议是在bearychat私聊或者搭建临时讨论组，当然当面沟通也是高效的方式。我们不建议在
+- 2.站会是加强团队凝聚力的一种方式，敏捷中的责任感、承诺感也是在站会中体现，如何解决这种问题？
+ - 我们认同敏捷开发需要face to face，凝聚力、承诺、责任感的引导可以在线上完成之后，在团队成员了解今日的情况及风险障碍时，再次快速进行2~3分钟的总结。
 
-- Configuration
 
-- Database creation
 
-- Database initialization
 
-- How to run the test suite
 
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
