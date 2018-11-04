@@ -1,7 +1,7 @@
 require 'json'
 class BearychatService
-  TOKEN = 'f784ff7ef67daa55ada1f27994b0b769'
-  HOST = 'http://localhost:3000/meeting_configs?bearychat_id='
+  TOKEN = '580521db768e89d62db6a33c6a308e9f'
+  HOST = 'http://116.85.47.65/meeting_configs?bearychat_id='
   BASEURL = 'https://api.bearychat.com/v1'
 
   class << self

@@ -1,15 +1,16 @@
 namespace :meeting do
+  
   desc "run"
   task :run => :environment do
     time = Time.zone.now
-    return unless time.min % 10 == 0
+    return unless time.min % 5 == 0
     send_meeting_start_msg
   end
 
   desc 'finish'
   task :finish => :environment do
     time = Time.zone.now
-    return unless time.min % 10 == 0
+    return unless time.min % 5 == 0
     send_meeting_end_msg
   end
 
