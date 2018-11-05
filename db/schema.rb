@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_11_04_133714) do
 
-  create_table "meeting_configs", force: :cascade do |t|
+  create_table "meeting_configs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "start_time"
     t.integer "time_limit"
     t.text "yesterday_tips"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_11_04_133714) do
     t.integer "start_time_number"
   end
 
-  create_table "meeting_messages", force: :cascade do |t|
+  create_table "meeting_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "meeting_config_id"
     t.string "uid"
     t.text "yesterday_tips"
