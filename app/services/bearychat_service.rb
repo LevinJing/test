@@ -27,7 +27,7 @@ class BearychatService
         end
       end.compact.join("\n")
       info = BearychatService.channel_info(channel_id)
-      uids_text = (info['member_uids'] - messages.pluck(:uid) - ['=bxcMr']).map do |uid|
+      uids_text = (info['member_uids'] - messages.pluck(:uid) - ['=bxdqO']).map do |uid|
         "@<=#{uid}=>"
       end.join(', ')
       texts = ['今天的阻碍事件有：']

@@ -18,7 +18,7 @@ namespace :meeting do
     time = Time.zone.now
     configs = MeetingConfig.where(end_time_number: time.strftime("%H%M").to_i)
     configs.each do |config|
-      BearychatService.send_text_msg(config.bearychat_id, meeting_finish_text(config))
+      BearychatService.finish_meeting(config.bearychat_id)
     end 
   end
 
@@ -26,7 +26,7 @@ namespace :meeting do
     time = Time.zone.now  
     configs = MeetingConfig.where(start_time_number: time.strftime("%H%M").to_i)
     configs.each do |config|
-      BearychatService.finish_meeting(config.bearychat_id)
+      BearychatService.send_text_msg(config.bearychat_id, meeting_info_text(config))
     end 
   end
 
