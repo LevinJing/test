@@ -32,10 +32,10 @@ namespace :meeting do
 
   def meeting_info_text(config)
     texts = ["Hi @<-channel-> ，我们开始今天的站会！请以数字开头回复如下问题："]
-    texts << "1 #{config.yesterday_tips}"
-    texts << "2 #{config.today_tips}"
-    texts << "3 #{config.trouble_tips}"
-    texts << "4 #{config.risk_tips}"
+    texts << "1 #{!config.yesterday_tips.blank? ? config.yesterday_tips : '昨天我为开发团队达成Sprint 目标做了什么？'}"
+    texts << "2 #{!config.today_tips.blank?? ? config.today_tips : '今天我为开发团队达成Sprint 目标做了什么？'}"
+    texts << "3 #{!config.trouble_tips.blank?? ? config.trouble_tips : '有什么事情阻碍了我帮助团队达成Sprint 目标？'}"
+    texts << "4 #{!config.risk_tips.blank?? ? config.risk_tips : '还有哪些风险？'}"
     texts.join("\n")
   end
 
