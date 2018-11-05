@@ -6,7 +6,9 @@ class BearychatService
 
   class << self
     def load()
-      rtm_connect() unless Rails.cache.fetch("Connected")
+      Rails.cache.fetch("Connected") do
+        rtm_connect()
+      end
     end
 
     def finish_meeting(channel_id)
@@ -66,14 +68,14 @@ class BearychatService
         result = RestClient.post(url, {})
         result = JSON.parse(result.body)
         websocket_connect(result['result']['ws_host']) if result['result']['ws_host']
-        Rails.cache.write("Connnected", 1)
+        true
       rescue => exception
         
       end
     end
 
     def ws_reconnent
-      Rails.cache.delete("Connnected")
+      Rails.cache.delete("Connected")
       rtm_connect()
     end
 
