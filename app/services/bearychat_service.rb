@@ -80,37 +80,35 @@ class BearychatService
     end
 
     def websocket_connect(url)
-      WebSocket::Client::Simple.connect url do |ws|
-        ws.on :open do
-          puts "connect!"
+      ws = WebSocket::Client::Simple.connect url
+      ws.on :open do
+        puts "connect!"
+      end
+      ws.on :close do
+        p "断开了！！！！！！"
+        ws_reconnent()
+      end
+      ws.on :error do |e|
+        p e, '='*100
+      end
+      ws.on :message do |message|
+        p message, message.type
+        if message.type.to_s == 'close'
+          BearychatService::rtm_connect()
+          return
         end
-
-        ws.on :close do
-          p "断开了！！！！！！"
-          ws_reconnent()
+        begin
+          data = JSON.parse(message.data)
+          Handler.dispatch(data)
+        rescue => exception
+          p exception, 'excception'
         end
-
-        ws.on :error do |e|
-          p e, '='*100
-        end
-
-        ws.on :message do |message|
-          p message, message.type
-          if message.type.to_s == 'close'
-            BearychatService::rtm_connect()
-            return
-          end
-          begin
-            data = JSON.parse(message.data)
-            Handler.dispatch(data)
-          rescue => exception
-            p exception, 'excception'
-          end
-        end
-
-        # loop do
-        #   ws.send STDIN.gets.strip
-        # end
+      end
+      loop do
+        msg = {"type" => "ping","call_id" => 1 }
+        p 'PING'
+        ws.send(msg.to_json)
+        sleep(10)
       end
     end
   end

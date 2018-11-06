@@ -1,1 +1,1 @@
-BearychatService.load
+BearychatService.load()
